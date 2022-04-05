@@ -43,7 +43,7 @@ class MainNewsActivity : AppCompatActivity() {
             }
     }
 
-    fun loadData(viewModel: MainNewsActivityViewModel, binding: NewsActivityMainBinding){
+    private fun loadData(viewModel: MainNewsActivityViewModel, binding: NewsActivityMainBinding){
         binding.progress.visibility = View.VISIBLE
         GlobalScope.launch(Dispatchers.Main) {
             try {

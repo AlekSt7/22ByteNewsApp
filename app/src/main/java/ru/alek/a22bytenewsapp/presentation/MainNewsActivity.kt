@@ -7,7 +7,11 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import okhttp3.Dispatcher
 import ru.alek.a22bytenewsapp.databinding.NewsActivityMainBinding
 import ru.alek.a22bytenewsapp.presentation.adpters.MainNewsAdapter
 
@@ -31,19 +35,20 @@ class MainNewsActivity : AppCompatActivity() {
             }
         }
 
-        binding.retryButton.setOnClickListener {
-            loadData(viewModel, binding)
-        }
-
-
+        binding.apply {
+            retryButton.setOnClickListener {
+                    errorWrapper.visibility = View.GONE
+                    loadData(viewModel, binding)
+                }
+            }
     }
 
     fun loadData(viewModel: MainNewsActivityViewModel, binding: NewsActivityMainBinding){
         binding.progress.visibility = View.VISIBLE
-        runBlocking {
+        GlobalScope.launch(Dispatchers.Main) {
             try {
                 viewModel.fetchNews()
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 binding.progress.visibility = View.GONE
                 binding.errorWrapper.visibility = View.VISIBLE
             }

@@ -3,6 +3,9 @@ package ru.alek.a22bytenewsapp.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import ru.alek.a22bytenewsapp.data.entities.ServerResponse
 import ru.alek.a22bytenewsapp.data.repositories.MainRepoImplementation
 

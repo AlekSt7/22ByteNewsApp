@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.MainNewsActivity">
+
+ <androidx.appcompat.widget.Toolbar
+     android:id="@+id/main_toolbar"
+     android:layout_width="match_parent"
+     android:layout_height="60dp"
+     android:layout_marginTop="20dp"
+     android:layout_marginRight="17dp"
+     android:layout_marginLeft="17dp"
+     android:elevation="@dimen/card_elevation">
+
+ </androidx.appcompat.widget.Toolbar>
+
+ <ProgressBar
+     android:id="@+id/progress"
+     android:visibility="gone"
+     android:layout_gravity="center"
+     android:layout_width="wrap_content"
+     android:layout_height="match_parent"/>
+
+ <FrameLayout
+     android:id="@+id/error_wrapper"
+     android:visibility="gone"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+  <TextView
+      android:id="@+id/error_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:textStyle="bold"
+      tools:text="@string/error"/>
+
+  <Button
+      android:id="@+id/retry_button"
+      android:layout_marginTop="45dp"
+      android:layout_width="45dp"
+      android:layout_height="45dp"
+      android:layout_gravity="center"
+      android:text="@string/retry"/>
+
+ </FrameLayout>
+
+ <FrameLayout
+     android:id="@+id/content_wrapper"
+     android:visibility="visible"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+  <com.stanford.simplebouncyrecycler.views.SimpleBouncyRecyclerView
+      android:id="@+id/news_list"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingLeft="14dp"
+      android:paddingRight="14dp"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      tools:listitem="@layout/news_item" />
+
+ </FrameLayout>
+
+</LinearLayout>

@@ -7,7 +7,7 @@ package ru.alek.a22bytenewsapp.data.entities
  * */
 data class ServerResponse(
     val totalResults: String,
-    val articles: News
+    val articles: List<News>
 ) {
 
     data class News(

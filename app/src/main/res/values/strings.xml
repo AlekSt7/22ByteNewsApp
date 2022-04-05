@@ -9,5 +9,6 @@
 
     <string name="error">Возникла ошибка при загрукзке данных</string>
     <string name="retry">Повторить попытку</string>
+    <string name="news">Главное за сегодня</string>
 
 </resources>

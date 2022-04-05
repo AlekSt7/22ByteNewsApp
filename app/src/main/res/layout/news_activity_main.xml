@@ -14,7 +14,15 @@
      android:layout_marginTop="20dp"
      android:layout_marginRight="17dp"
      android:layout_marginLeft="17dp"
+     android:background="@drawable/toolbar_bg"
      android:elevation="@dimen/card_elevation">
+
+  <TextView
+      android:text="@string/news"
+      android:textSize="15sp"
+      android:textAlignment="center"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
 
  </androidx.appcompat.widget.Toolbar>
 

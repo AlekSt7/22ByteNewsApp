@@ -2,7 +2,7 @@ package ru.alek.a22bytenewsapp.domain.models;
 
 import java.util.List;
 
-public class ServerResponce {
+public class ServerResponse {
 
     private final String status;
     private final String code;
@@ -10,7 +10,7 @@ public class ServerResponce {
     private final String totalResults;
     private final List<NewsModel> articles;
 
-    public ServerResponce(String totalResults, List<NewsModel> articles, String status, String code, String message){
+    public ServerResponse(String totalResults, List<NewsModel> articles, String status, String code, String message){
         this.totalResults = totalResults;
         this.articles = articles;
         this.status = status;

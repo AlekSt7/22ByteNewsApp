@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/news_item.xml" value="0.2965" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/layout/news_feed_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/layout/news_item.xml" value="0.3625" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNewsApp2/app/src/main/res/layout/news_feed_fragment.xml" value="0.3625" />
       </map>
     </option>

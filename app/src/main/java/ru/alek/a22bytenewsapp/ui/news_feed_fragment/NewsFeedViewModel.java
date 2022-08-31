@@ -1,5 +1,7 @@
 package ru.alek.a22bytenewsapp.ui.news_feed_fragment;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -28,12 +30,13 @@ public class NewsFeedViewModel extends ViewModel {
         newsRepository.getNewsList(new NewsRepoImpl.NewsCallback() {
             @Override
             public void onDataRecieved(List<NewsModel> newsSet) {
+                Log.e("on", "DataRecieved");
                 newsSetMutableLiveData.setValue(newsSet);
             }
 
             @Override
             public void onFailure(Throwable t) {
-
+                Log.e("T", String.valueOf(t));
             }
         });
     }

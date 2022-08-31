@@ -32,10 +32,11 @@ public class NewsFeedFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        newsRecyclerView = getView().findViewById(R.id.news);
+        View root = inflater.inflate(R.layout.news_feed_fragment, container, false);
+        newsRecyclerView = root.findViewById(R.id.news);
         newsAdapter = new NewsAdapter();
         newsRecyclerView.setAdapter(newsAdapter);
-        return inflater.inflate(R.layout.news_feed_fragment, container, false);
+        return root;
     }
 
     @Override

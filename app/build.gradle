@@ -57,6 +57,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //UI
+    implementation "com.airbnb.android:lottie:3.4.0"
+    implementation "com.stanford:simplebouncyrecycler:0.0.5"
 
 
 }

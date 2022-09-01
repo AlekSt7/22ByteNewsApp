@@ -1,5 +1,8 @@
 package ru.alek.a22bytenewsapp.data.network.repos_impl;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 import androidx.annotation.NonNull;
 
 import java.util.List;
@@ -17,7 +20,11 @@ import ru.alek.a22bytenewsapp.exceptions.ApiException;
 
 public class NewsRepoImpl implements INewsRepository {
 
-    ApiManager api = MainApp.getInstance().getApi();
+    private final ApiManager api;
+
+    public NewsRepoImpl(){
+        api = MainApp.getInstance().getApi();
+    }
 
     public interface NewsCallback{
         void onDataRecieved(List<NewsModel> newsSet);
@@ -26,29 +33,29 @@ public class NewsRepoImpl implements INewsRepository {
 
     @Override
     public void getNewsList(NewsCallback callback) {
-        api.loadNews(
-                BuildConfig.API_KEY,
-                "Ru"
-        ).enqueue(new Callback<ServerResponse>() {
-            @Override
-            public void onResponse(@NonNull Call<ServerResponse> call, @NonNull Response<ServerResponse> response) {
-                ServerResponse body = response.body();
-                if(response.isSuccessful() && body != null){
-                    if(body.getMessage() == null || body.getCode() == null){
-                        callback.onDataRecieved(body.getArticles());
+            api.loadNews(
+                    BuildConfig.API_KEY,
+                    "ru"
+            ).enqueue(new Callback<ServerResponse>() {
+                @Override
+                public void onResponse(@NonNull Call<ServerResponse> call, @NonNull Response<ServerResponse> response) {
+                    ServerResponse body = response.body();
+                    if(response.isSuccessful() && body != null){
+                        if(body.getMessage() == null || body.getCode() == null){
+                            callback.onDataRecieved(body.getArticles());
+                        }else{
+                            callback.onFailure(new ApiException(body));
+                        }
                     }else{
-                        callback.onFailure(new ApiException(body));
+                            callback.onFailure(new Throwable(response.message()));
                     }
-                }else{
-                        callback.onFailure(new Throwable(response.message()));
                 }
-            }
 
-            @Override
-            public void onFailure(@NonNull Call<ServerResponse> call, @NonNull Throwable t) {
-                callback.onFailure(t);
-            }
-        });
+                @Override
+                public void onFailure(@NonNull Call<ServerResponse> call, @NonNull Throwable t) {
+                    callback.onFailure(t);
+                }
+            });
     }
 
 }

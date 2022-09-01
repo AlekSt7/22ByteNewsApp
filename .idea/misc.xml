@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/circle.xml" value="0.3635" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/launch_screen.xml" value="0.3055" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/news_item.xml" value="0.2965" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/radio_button_tab_selector.xml" value="0.272" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/radio_button_text_selector.xml" value="0.272" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/tab.xml" value="0.272" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/tab_radiobutton.xml" value="0.272" />
+        <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/drawable/tab_selected.xml" value="0.272" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/layout/news_feed_fragment.xml" value="0.3625" />
         <entry key="..\:/Users/aleks/AndroidStudioProjects/22ByteNews/app/src/main/res/layout/news_item.xml" value="0.3625" />

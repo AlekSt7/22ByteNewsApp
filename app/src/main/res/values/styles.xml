@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--For rounded ImageView-->
+    <style name="SpecifiCornerRounded" parent="">
+        <item name="cornerSizeTopLeft">@dimen/corner</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">@dimen/corner</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/corner</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/corner</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+    </style>
+
+    <!--For radiobutton-->
+    <style name="RadioButtons">
+        <item name="android:background">@drawable/tab_radiobutton</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:drawableTint" tools:targetApi="m">?attr/colorPrimary</item>
+        <item name="android:textColor">@drawable/radio_button_text_selector</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:paddingStart">23dp</item>
+        <item name="android:paddingEnd">23dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+</resources>

@@ -5,11 +5,11 @@
     <string name="fish">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
         in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
-    <string name="author">Автор:</string>
-    <string name="source">Источник:</string>
+    <string name="author">Автор</string>
+    <string name="source">Источник</string>
+    <string name="unknown_author">Автор неизвестен</string>
 
-    <string name="error">Возникла ошибка при загрукзке данных</string>
+    <string name="error">Возникла ошибка при загрузке данных</string>
     <string name="retry">Повторить попытку</string>
-    <string name="news">Главное за сегодня</string>
 
 </resources>

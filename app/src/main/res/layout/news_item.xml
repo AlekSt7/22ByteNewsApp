@@ -1,39 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
+    android:layout_height="210dp"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_wrapper"
-    android:foreground="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true"
-    android:layout_marginTop="14dp"
-    android:layout_marginStart="14dp"
-    android:layout_marginEnd="14dp"
-    app:cardCornerRadius="@dimen/corner"
-    app:cardElevation="@dimen/card_elevation">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_gravity="start"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginStart="14dp"
+            android:id="@+id/indicator"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle" />
+
+        <TextView
+            android:id="@+id/source"
+            android:layout_marginStart="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginEnd="@dimen/side_margin"
+            tools:text="@string/source"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        app:cardCornerRadius="@dimen/corner"
+        app:cardElevation="@dimen/card_elevation">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="start"
         android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/preview"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:scaleType="centerCrop"
-            tools:src="@tools:sample/avatars"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:paddingStart="@dimen/side_margin"
-            android:layout_gravity=""
+            android:layout_marginEnd="@dimen/side_margin"
             android:gravity="center|top">
 
             <TextView
@@ -41,21 +65,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginEnd="@dimen/side_margin"
-                android:textSize="@dimen/title_3"
+                android:textSize="@dimen/title_4"
                 android:ellipsize="end"
-                android:maxLines="5"
-                tools:text="@string/fish"/>
+                android:maxLines="2"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_top_text"
+                tools:text="Звучащее название заголовка, которое привлекает внимание и имеет сравнительно большой размер"/>
+
+            <View
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin_top_text"
+                android:layout_height="0.5dp"/>
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginEnd="@dimen/side_margin"
-                android:textSize="@dimen/title_3"
+                android:textSize="@dimen/title_4"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/margin_top_text"
                 android:ellipsize="end"
-                android:maxLines="5"
+                android:maxLines="3"
                 tools:text="@string/fish"/>
 
             <TextView
@@ -63,23 +95,26 @@
                 android:layout_gravity="start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top_text"
+                android:layout_marginBottom="@dimen/margin_top_text"
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:layout_marginEnd="@dimen/side_margin"
                 tools:text="@string/author"/>
 
-            <TextView
-                android:id="@+id/source"
-                android:layout_gravity="start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:layout_marginEnd="@dimen/side_margin"
-                tools:text="@string/source"/>
-
         </LinearLayout>
 
-    </LinearLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/preview"
+            android:layout_marginEnd="@dimen/side_margin"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="end|center"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/SpecifiCornerRounded"
+            tools:src="@tools:sample/avatars"/>
 
-</androidx.cardview.widget.CardView>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

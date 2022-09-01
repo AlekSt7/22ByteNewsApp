@@ -64,7 +64,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         public void bind(NewsModel news){
             title.setText(news.getTitle());
             description.setText(news.getDescription());
-            author.setText(news.getAuthor());
+            if(news.getAuthor() != null) {
+                author.setText(news.getAuthor());
+            }else{
+                author.setText(itemView.getContext().getResources().getString(R.string.unknown_author));
+            }
             source.setText(news.getSource().getName());
 
             Glide.with(itemView.getContext())

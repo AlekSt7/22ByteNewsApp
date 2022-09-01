@@ -12,6 +12,7 @@
     <dimen name="title_1">35sp</dimen>
     <dimen name="title_2">25sp</dimen>
     <dimen name="title_3">17sp</dimen>
+    <dimen name="title_4">15sp</dimen>
     <dimen name="side_margin">10dp</dimen>
 
     <!-- _____________ -->

@@ -30,13 +30,12 @@ public class NewsFeedViewModel extends ViewModel {
         newsRepository.getNewsList(new NewsRepoImpl.NewsCallback() {
             @Override
             public void onDataRecieved(List<NewsModel> newsSet) {
-                Log.e("on", "DataRecieved");
                 newsSetMutableLiveData.setValue(newsSet);
             }
 
             @Override
             public void onFailure(Throwable t) {
-                Log.e("T", String.valueOf(t));
+                exceptionsLiveData.setValue(t);
             }
         });
     }
